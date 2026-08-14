@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackroom — UNIOSUN Student E-Library</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+
+<!-- ===================== HOMEPAGE ===================== -->
+<div id="page-home">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><div class="brand-name">Stackroom</div><div class="brand-sub">UNIOSUN E-Library</div></div>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button class="btn btn-sm" onclick="showAuth('login')">Log in</button>
+        <button class="btn btn-solid btn-sm" onclick="showAuth('register')">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">UNIOSUN Digital Library</div>
+          <h1>Every text you need,<br><em>always within reach.</em></h1>
+          <p class="lead">Stackroom gives UNIOSUN students and teachers a shared digital shelf — upload, browse, download, and request academic materials from any device, anywhere.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-solid" onclick="showAuth('register')">Create free account</button>
+            <button class="btn" onclick="showAuth('login')">Log in →</button>
+          </div>
+          <div class="hero-trust">
+            <span>Free for all students</span>
+            <span>Any device, any campus</span>
+            <span>Admin-verified access</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-tag mono">// FEATURED RESOURCES</div>
+          <h3>What you can do with Stackroom</h3>
+          <ul class="edu-tips">
+            <li><span class="edu-num">01</span><span>Browse and download textbooks, past questions, and lecture notes uploaded by your teachers</span></li>
+            <li><span class="edu-num">02</span><span>Request books your library doesn't have yet — and vote up requests from fellow students</span></li>
+            <li><span class="edu-num">03</span><span>Auto-summarize any PDF and generate quiz questions to test yourself before exams</span></li>
+            <li><span class="edu-num">04</span><span>Bookmark materials you use often so you can find them instantly next time</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp channel -->
+  <div class="wrap">
+    <a class="wa-channel" href="https://whatsapp.com/channel/0029Va6hOSYBvvscpLl8O53E" target="_blank" rel="noopener">
+      <div class="wa-icon">📣</div>
+      <span>Follow the <b>UNIOSUN INFO 📚📖</b> channel on WhatsApp for library &amp; campus updates</span>
+    </a>
+  </div>
+
+  <!-- Features -->
+  <div class="wrap">
+    <div class="features">
+      <div class="section-label">What's inside</div>
+      <div class="section-title">Everything your studies need</div>
+      <div class="features-grid" style="margin-top:18px;">
+        <div class="feature">
+          <div class="icon">📚</div>
+          <h4>Browse & Download</h4>
+          <p>Search the full library by title or author and download PDFs instantly to your phone or laptop.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📤</div>
+          <h4>Teacher Uploads</h4>
+          <p>Verified teachers and admins can upload course materials so the whole class has access in one place.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🗳️</div>
+          <h4>Book Requests & Voting</h4>
+          <p>Request a title not yet in the library. Other students upvote it so teachers know what's most needed.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔖</div>
+          <h4>Bookmarks</h4>
+          <p>Save your most-used texts to your personal bookmark list for one-tap access anytime.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧠</div>
+          <h4>Auto-Summarize</h4>
+          <p>Upload any PDF and get a structured overview and key points in seconds — great for revision.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✏️</div>
+          <h4>Quiz Generator</h4>
+          <p>Turn any chapter into a set of practice questions to test your understanding before exams.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="margin-bottom:12px;">
+            <div class="brand-mark">S</div>
+            <div><div class="brand-name">Stackroom</div><div class="brand-sub">UNIOSUN E-Library</div></div>
+          </div>
+          <p>A digital library built for UNIOSUN students and teachers — accessible from any device, any time.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick links</h5>
+          <a href="#" onclick="showAuth('login')">Log in</a>
+          <a href="#" onclick="showAuth('register')">Create account</a>
+          <a href="https://whatsapp.com/channel/0029Va6hOSYBvvscpLl8O53E" target="_blank" rel="noopener">WhatsApp channel</a>
+        </div>
+        <div class="footer-col">
+          <h5>Info</h5>
+          <p>For students and staff of Osun State University (UNIOSUN).</p>
+          <p style="margin-top:8px;">Contact your admin to get your account approved.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stackroom · UNIOSUN</span>
+        <span>Built for students, by students.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== AUTH PAGE ===================== -->
+<div id="page-auth" style="display:none;">
+  <div class="auth-page">
+    <div class="auth-side">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><div class="brand-name" style="color:#EAF1EF;">Stackroom</div><div class="brand-sub">UNIOSUN E-Library</div></div>
+      </div>
+      <div class="auth-side-headline">Your campus library,<br><em>in your pocket.</em></div>
+      <div style="margin-top:30px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:20px;">
+        <div class="mono" style="font-size:10px;color:#9FB0C4;margin-bottom:12px;">UNIOSUN LIBRARY CARD</div>
+        <div style="font-size:13px;color:#C9D3DF;line-height:2;">
+          <b style="color:#fff;">Institution:</b> Osun State University<br>
+          <b style="color:#fff;">Access:</b> All campuses<br>
+          <b style="color:#fff;">Materials:</b> Textbooks, Past Questions, Notes<br>
+          <b style="color:#fff;">Status:</b> <span style="color:#6FE3AC;">● Open</span>
+        </div>
+      </div>
+      <div class="auth-side-quote">"The more that you read, the more things you will know." — Dr. Seuss</div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-box">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tab-login" onclick="showAuth('login')">Log in</button>
+          <button class="auth-tab" id="tab-register" onclick="showAuth('register')">Register</button>
+        </div>
+
+        <!-- Login form -->
+        <div id="form-login">
+          <h2>Welcome back</h2>
+          <p class="sub">Sign in to access the library</p>
+          <div class="field"><label>Username</label><input id="l-username" placeholder="Your username"></div>
+          <div class="field"><label>Password</label><input id="l-password" type="password" placeholder="Your password"></div>
+          <button class="btn btn-solid" style="width:100%;justify-content:center;padding:12px;" onclick="doLogin()">Log in</button>
+          <p class="auth-msg" id="login-msg"></p>
+          <p style="font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center;">No account? <a href="#" onclick="showAuth('register')" style="color:var(--brass-dark);font-weight:600;">Register here</a></p>
+          <button class="btn btn-sm" style="margin-top:16px;width:100%;justify-content:center;" onclick="document.getElementById('page-auth').style.display='none';document.getElementById('page-home').style.display='block';">← Back to home</button>
+        </div>
+
+        <!-- Register form -->
+        <div id="form-register" style="display:none;">
+          <h2>Create account</h2>
+          <p class="sub">New accounts need admin approval before you can log in</p>
+          <div class="field"><label>Username</label><input id="r-username" placeholder="Choose a username"></div>
+          <div class="field"><label>Password</label><input id="r-password" type="password" placeholder="Choose a password"></div>
+          <div class="field"><label>I am a</label>
+            <select id="r-role">
+              <option value="student">Student</option>
+              <option value="teacher">Teacher / Lecturer</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="field"><label>Campus</label><input id="r-campus" placeholder="e.g. Osogbo"></div>
+            <div class="field"><label>College</label><input id="r-college" placeholder="e.g. CSET"></div>
+          </div>
+          <button class="btn btn-solid" style="width:100%;justify-content:center;padding:12px;" onclick="doRegister()">Create account</button>
+          <p class="auth-msg" id="register-msg"></p>
+          <p style="font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center;">Have an account? <a href="#" onclick="showAuth('login')" style="color:var(--brass-dark);font-weight:600;">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="page-app" style="display:none;">
+  <div class="app-shell">
+
+    <!-- Sidebar (desktop) -->
+    <div class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><div class="brand-name">Stackroom</div><div class="brand-sub">UNIOSUN E-Library</div></div>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+      <div class="sidebar-foot">
+        <div class="profile-card">
+          <div class="avatar" id="sidebar-avatar">?</div>
+          <div><div class="profile-name" id="sidebar-name">—</div><div class="profile-role" id="sidebar-role">—</div></div>
+        </div>
+        <a class="wa-sidebar-link" href="https://whatsapp.com/channel/0029Va6hOSYBvvscpLl8O53E" target="_blank" rel="noopener">
+          <span>📣</span><span>UNIOSUN INFO 📚📖</span>
+        </a>
+        <button class="btn btn-sm btn-danger" style="width:100%;justify-content:center;margin-top:10px;" onclick="doLogout()">Log out</button>
+      </div>
+    </div>
+
+    <!-- Main panel -->
+    <div class="main-panel">
+
+      <!-- Browse -->
+      <div class="subview active" id="sv-browse">
+        <div class="panel-header">
+          <h2>📚 Library</h2>
+          <p>Browse and download available books and materials</p>
+        </div>
+        <div class="search-bar">
+          <input id="search-q" placeholder="Search by title or author…" oninput="loadBooks()">
+        </div>
+        <div id="books-grid"></div>
+      </div>
+
+      <!-- Upload -->
+      <div class="subview" id="sv-upload">
+        <div class="panel-header"><h2>📤 Upload a book</h2><p>Add a PDF to the library for all students to access</p></div>
+        <div class="upload-block">
+          <div class="field"><label>Title *</label><input id="up-title" placeholder="Full book title"></div>
+          <div class="form-row">
+            <div class="field"><label>Author</label><input id="up-author" placeholder="Author name"></div>
+            <div class="field"><label>Description</label><input id="up-desc" placeholder="Brief description"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label>Campus</label><input id="up-campus" placeholder="e.g. Osogbo"></div>
+            <div class="field"><label>College</label><input id="up-college" placeholder="e.g. CSET"></div>
+          </div>
+          <div class="field">
+            <label>PDF File *</label>
+            <div class="file-drop" onclick="document.getElementById('up-file').click()">
+              <div style="font-size:28px;margin-bottom:8px;">📄</div>
+              <div id="file-drop-label">Click to choose a PDF file</div>
+            </div>
+            <input id="up-file" type="file" accept="application/pdf" style="display:none;" onchange="onFileChosen(this)">
+          </div>
+          <button class="btn btn-solid" style="width:100%;justify-content:center;" onclick="doUpload()" id="upload-btn">Upload book</button>
+          <p id="up-msg" style="font-size:13px;color:var(--ink-soft);margin-top:10px;"></p>
+        </div>
+      </div>
+
+      <!-- Requests -->
+      <div class="subview" id="sv-requests">
+        <div class="panel-header"><h2>🗳️ Book Requests</h2><p>Request a book and vote on what others have requested</p></div>
+        <div class="req-form-block">
+          <h3>Request a book</h3>
+          <div class="form-row">
+            <div class="field"><label>Title *</label><input id="req-title" placeholder="Book title"></div>
+            <div class="field"><label>Author</label><input id="req-author" placeholder="Author (optional)"></div>
+          </div>
+          <div class="field"><label>Note</label><input id="req-note" placeholder="Why do you need this book?"></div>
+          <button class="btn btn-solid btn-sm" onclick="doCreateRequest()">Submit request</button>
+        </div>
+        <div id="requests-list"></div>
+      </div>
+
+      <!-- Bookmarks -->
+      <div class="subview" id="sv-bookmarks">
+        <div class="panel-header"><h2>🔖 My Bookmarks</h2><p>Books you've saved for quick access</p></div>
+        <div id="bookmarks-grid"></div>
+      </div>
+
+      <!-- Summarize -->
+      <div class="subview" id="sv-summarize">
+        <div class="panel-header"><h2>🧠 Summarize a PDF</h2><p>Upload any PDF to get an instant overview and key points</p></div>
+        <div class="tool-block">
+          <h3>Generate summary</h3>
+          <p class="sub">Choose a PDF from your device — works with textbooks, lecture notes, past questions</p>
+          <div class="field">
+            <div class="file-drop" onclick="document.getElementById('sum-file').click()">
+              <div style="font-size:26px;margin-bottom:6px;">🧠</div>
+              <div id="sum-file-label">Click to choose a PDF</div>
+            </div>
+            <input id="sum-file" type="file" accept="application/pdf" style="display:none;" onchange="document.getElementById('sum-file-label').textContent=this.files[0]?.name||'Click to choose a PDF'">
+          </div>
+          <button class="btn btn-solid btn-sm" onclick="doSummarize()">Generate summary</button>
+          <div id="sum-result" style="display:none;"></div>
+        </div>
+        <div class="tool-block">
+          <h3>Saved summaries</h3>
+          <div id="summaries-list"></div>
+        </div>
+      </div>
+
+      <!-- Quiz -->
+      <div class="subview" id="sv-quiz">
+        <div class="panel-header"><h2>✏️ Quiz yourself</h2><p>Generate practice questions from any PDF to test your understanding</p></div>
+        <div class="tool-block">
+          <h3>Generate quiz</h3>
+          <p class="sub">Upload a chapter or lecture note and get practice questions instantly</p>
+          <div class="field">
+            <div class="file-drop" onclick="document.getElementById('quiz-file').click()">
+              <div style="font-size:26px;margin-bottom:6px;">✏️</div>
+              <div id="quiz-file-label">Click to choose a PDF</div>
+            </div>
+            <input id="quiz-file" type="file" accept="application/pdf" style="display:none;" onchange="document.getElementById('quiz-file-label').textContent=this.files[0]?.name||'Click to choose a PDF'">
+          </div>
+          <button class="btn btn-solid btn-sm" onclick="doQuiz()">Generate quiz</button>
+          <div id="quiz-result" style="display:none;"></div>
+        </div>
+        <div class="tool-block">
+          <h3>Saved quizzes</h3>
+          <div id="quizzes-list"></div>
+        </div>
+      </div>
+
+      <!-- Admin -->
+      <div class="subview" id="sv-admin">
+        <div class="panel-header"><h2>⚙️ Admin Panel</h2><p>Manage users, approve accounts, and view activity</p></div>
+        <div class="stat-cards" id="admin-stats"></div>
+        <div class="block">
+          <div class="block-title"><h3>⏳ Pending approvals</h3></div>
+          <div id="admin-pending"></div>
+        </div>
+        <div class="block">
+          <div class="block-title"><h3>👥 All users</h3></div>
+          <div id="admin-users"></div>
+        </div>
+        <div class="block">
+          <div class="block-title"><h3>📋 Book requests</h3></div>
+          <div id="admin-requests"></div>
+        </div>
+        <div class="block">
+          <div class="block-title"><h3>🗒️ Audit log</h3></div>
+          <div id="admin-audit"></div>
+        </div>
+      </div>
+
+    </div><!-- /main-panel -->
+  </div><!-- /app-shell -->
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav" id="mobile-nav"></nav>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
